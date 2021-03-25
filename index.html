@@ -1,252 +1,155 @@
+<!doctype html>
+<html lang="en">
 <head>
-    <title>Dayat Fadila</title>
-    <link href="https://fonts.googleapis.com/css?family=Lobster|Poppins:200,400,400i,500,700,700i" rel="stylesheet">
-<style>
-    /*
-colors scheme of the website:
-Grape: #94618E rgb(148,97,142)
-Eggplant: #49274A rgb(73,39,74)
-Sand: #F4DECB rgb(244,222,203)
-Shell: #F8EEE7 rgb(248,238,231)
+    <meta charset="utf-8">
+    <!--  Menggunakan viewport untuk desain web yang responsif (responsive web design)-->
+    <!--  Tag meta viewport akan memberikan intruksi ke browser untuk mengatur dimensi dan sekala web.-->
+    <!-- Nilai width=device-width, artinya lebar web akan mengikuti lebar dari layar perangkat yang digunakan.-->
+    <!--  Nilai inital-scale=1, artinya web akan diberikan skala (zoom) menjadi 1 (normal)-->
 
-*/
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    html,
-    body {
-        font-family: 'Poppins', sans-serif;
-        text-align: center;
+    <!--Menggunakan Bootstrap CSS didapatkan dari cdn -->
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.css">
 
-        background: rgba(248,238,231, 0.9);
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 
-    }
-
-    * {
-        margin: 0;
-        padding: 0;
-    }
-
-    .intro {
-        top: 0;
-        background: #e0ebe8;
-        min-height: 55vh;
-        padding-top: 45vh;
-        font-family: 'Lobster', cursive;
-        font-size: 2rem;
-        background: linear-gradient(
-                rgba(148,97, 142, 0.4),               rgba(148,97,142, 0.3)),
-        url("https://images.unsplash.com/photo-1485119584289-30ca2b38c67e?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=3c395832fbacd178701646c494b1278c&auto=format&fit=crop&w=2550&q=80") no-repeat center;
-        background-size: cover;
-        color: rgb(248,238,231);
-        text-shadow: 2px 2px #94618E;
-        /*   line-height: 100vh; */
-        /*   width:100%;
-        height:96vh;
-      border:solid; */
-    }
-
-    .intro p {
-        color: rgb(73,39,74);
-    }
-
-    nav ul {
-        text-align: right;
-        position: fixed;
-        width: 100%;
-        background-color: rgb(244,222,203);
-    }
-
-    nav ul li {
-        display: inline-block;
-        margin: 55px;
-        margin-bottom: 15px;
-        margin-top: 25px;
-    }
-
-    nav ul li a {
-        color: rgb(73,39,74);
-        text-decoration: none;
-    }
-
-    nav ul li a:hover {
-        color: rgb(148,97,142);
-    }
-
-    .work {
-        padding-top: 60px;
-        margin-top: -60px;
-
-    }
-
-    .work .work-header {
-        margin-top: 50px;
-        color: rgb(148,97,142);
-        text-shadow: 1px 1px rgb(73,39,74);
-        font-weight: normal;
-        font-family: Lobster, cursive;
-        font-size: 2.5rem;
-    }
-
-    .project {
-        text-decoration: none;
-        color: rgb(73,39,74);
-        display: inline-block;
-        overflow: hidden;
-        border: 2px solid rgb(148,97,142);
-        height: 220px;
-        width: 280px;
-        margin: 40px 100px;
-
-    }
-
-    .project-pic {
-        width: 100%;
-        height: 180px;
-        border-bottom: 2px solid rgb(148,97,142);
-    }
-
-    .project-title {
-        font-weight: bold;
-    }
-
-    .show-all {
-        text-decoration: none;
-        display: block;
-        width: 200px;
-        height: 30px;
-        margin: 20px auto 90px;
-        background: rgb(244,222,203);
-        color: rgb(73,39,74);
-        font-weight: bold;
-        font-size: 1em;
-        border: 2px solid rgb(148,97,142);
-        border-radius: 4px;
-        cursor: pointer;
-        padding-top:10px;
-    }
-
-
-    .show-all:hover {
-        background: rgb(248,238,231);
-        color: rgb(148,97,142);
-    }
-
-    @media only screen and (max-width: 500px) {
-        nav ul {
-            text-align: center;
-        }
-        nav ul li {
-            margin: 20px;
-        }
-        .project {
-            margin: 40px 0;
-        }
-    }
-
-    .contact {
-        /*   height:800px; */
-        /*   min-height:800px; */
-        background: linear-gradient(
-                rgba(148,97,142, 0.4),
-                rgba(148,97,142, 0.3));
-        padding-bottom: 160px;
-    }
-
-    .header {
-        padding: 160px 0 110px;
-    }
-
-    .contact-details {
-        display: inline-block;
-        font-weight: bold;
-        margin: 0 35px 45px 35px;
-        list-style-type: none;
-        border: 2px solid rgb(148,97,142);
-        border-radius: 100%;
-        width: 100px;
-        height: 100px;
-        line-height: 100px;
-        background: rgb(244,222,203);
-        color: rgb(73,39,74);
-        text-decoration: none;
-    }
-
-    .contact-details:hover {
-        background: rgb(248,238,231);
-        color: rgb(148,97,142);
-    }
-
-    footer {
-        padding: 20px;
-        background: #22313F;
-        color: white;
-        line-height: 40px;
-    }
-
-    footer a {
-        color: white;
-    }
-
-    @media only screen and (max-width: 367px) {
-        /*    #contact{
-          min-height:1100px;
-        } */
-        .contact-details {
-            border: 2px solid #90C695;
-            border-radius: 0;
-            width: 90px;
-            height: 20px;
-            padding: 10px;
-            line-height: normal;
-        }
-    }
-</style>
+    <title>Home - 205411102 (Dayat Fadila)</title>
 </head>
-<nav>
-    <ul id='navbar'>
-        <li><a href="#welcome-section">About</a></li>
-<!--        <li><a href="#projects">Work</a></li>-->
-        <li><a href="#contact">Contact</a></li>
-    </ul>
-</nav>
+<body>
 
-<div id="welcome-section" class="intro">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+        <a class="navbar-brand" href="index.html">Nidnod Cake</a>
 
-    <h1>Hey I'am Dayat.</h1>
-    <p>I create websites</p>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="index.html">Home
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Services</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Contact</a>
+                </li>
 
-</div>
-<!--<div id="projects" class="work">-->
-<!--    <h2 class="work-header">These are some of my projects..</h2>-->
-<!--    <a href="https://codepen.io/sasha-code/pen/djZzNZ" target="_blank" class="project project-tile">-->
-<!--        <img class="project-pic" src="https://raw.githubusercontent.com/sasha-code/images/master/filterWebsite.png" alt="project">-->
-<!--        <div class="project-title">Filters</div>-->
-<!--    </a>-->
-<!--    <a href="https://codepen.io/sasha-code/full/pZqPVP/" target="_blank" class="project project-tile">-->
-<!--        <img class="project-pic" src="https://raw.githubusercontent.com/sasha-code/images/master/ToDoListWeb.png" alt="project">-->
-<!--        <div class="project-title">ToDoList</div>-->
-<!--    </a>-->
-<!--    <a href="https://codepen.io/sasha-code/full/jpXmXm/" target="_blank" class="project project-tile">-->
-<!--        <img class="project-pic" src="https://raw.githubusercontent.com/sasha-code/images/master/rgbColorGame.png" alt="project">-->
-<!--        <div class="project-title">Color Game Website</div>-->
-<!--    </a>-->
-<!--    <a href="https://codepen.io/sasha-code/full/QBMbWM/" target="_blank" class="project project-tile">-->
-<!--        <img class="project-pic" src="https://raw.githubusercontent.com/sasha-code/images/master/GreenScreenWeb.png" alt="project">-->
-<!--        <div class="project-title">Green Screen Website</div>-->
-<!--    </a>-->
-
-<!--    <a href="https://codepen.io/sasha-code/" class="show-all" target="_blank">Show all</a>-->
-<!--</div>-->
-<div id="contact" class="contact">
-    <div class="header">
-        <h1>Let's work together...</h1>
+            </ul>
+            <div class="ml-auto my-2 my-lg-0">
+                <div class="section" id="b-section-navbar-search-form" name="Navbar: search form">
+                    <div class="widget BlogSearch" data-version="2" id="BlogSearch1">
+                        <form action="" class="form-inline">
+                            <input aria-label="Search this blog" class="form-control mr-sm-2" name="q"
+                                   placeholder="Search this blog" type="text">
+                            <button class="btn btn-success my-2 my-sm-0" type="submit">Search</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <a href="https://www.facebook.com/dayat.fadila" target="_blank" class="contact-details">Facebook</a>
-    <a id='profile-link' href="https://github.com/dayatfadila7" target="_blank" class="contact-details">GitHub</a>
-    <a href="https://www.linkedin.com/in/dayatfadila/" target="_blank" class="contact-details">LinkedIn</a>
-    <a href="mailto:dayat.recovery@gmail.com" class="contact-details">Email me</a>
+</nav>
+<!-- pada section content menggunakan break point bootstrap
+ dengan class row untuk menjadi wadah untuk bagian kolom pada content tersebut
+ dimana dalam 1 layar penuh dibagi 12 kolom
+ jika fullpage mengguna col-12, jika setengah menggunakan col-6 dan seterusnya dibagi hingga col-1
+ sebanyak 12 kali.
+ pada class col ini menyediakan break point untuk setiap bagian adalah sebagai berikut :
+ col-lg = untuk ukuran extra large
+ col-md = untuk ukuran medium
+ col-sm = untuk ukuran small
 
-</div>
-<footer>
-    <p></p>
-</footer>
+ dimana pada bootstap 4 ini mengunakan media query dengan break point sebagai berikut
+
+ /* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+
+}
+
+/* Medium devices (tablets, 768px and up) The navbar toggle appears at this breakpoint */
+@media (min-width: 768px) {
+
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+
+}
+
+ -->
+<section id="content" style="margin-top: 100px;">
+    <div class="container">
+        <div class="row my-5 border  shadow">
+            <div class="col-md-4">
+                <img src="https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=849&q=80"
+                     class="img-fluid p-3">
+            </div>
+            <div class="col-md-8 col-sm-12 align-self-center p-4 ">
+                <h3 class="font-weight-light text-success">Colorful Cake</h3>
+                <p>Icing sweet cupcake lemon drops powder bear claw cake cheesecake. Lollipop donut jelly biscuit. Ice
+                    cream cake jelly biscuit cake. Pie donut icing cookie. Cheesecake lollipop sweet roll oat cake ice
+                    cream dragée cupcake gummies marshmallow. Cake apple pie biscuit chocolate bar jelly beans jelly-o
+                    marzipan wafer. Cake sugar plum chocolate cake. Chocolate bar pie cupcake dragée donut cupcake.
+                    Chupa chups tart chocolate soufflé chocolate bar chocolate bar cake fruitcake</p>
+                <a href="detail.html" class="btn btn-outline-success btn-sm">Read More</a>
+            </div>
+        </div>
+        <div class="row my-5 border  shadow">
+            <div class="col-md-4">
+                <!--   menggunakan responsive image dengan memanfaatkan class img-fluid-->
+                <!--   dimana class tersebut menggunakan properti :-->
+                <!--   width: 100%;-->
+                <!--   height: auto;
+                hal ini seperti pada refrensi image responsive dengan tautan
+                https://www.w3schools.com/howto/howto_css_image_responsive.asp
+                -->
+                <img src="https://images.unsplash.com/photo-1596408326691-de9b35c3ab3d?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80"
+                     class="img-fluid p-3">
+            </div>
+            <div class="col-md-8 col-sm-12 align-self-center p-4 ">
+                <h3 class="font-weight-light text-success">Cake Gem</h3>
+                <p>Gummi bears chupa chups candy jelly-o pudding tart oat cake cupcake. Liquorice cheesecake biscuit
+                    jujubes cupcake donut fruitcake sugar plum fruitcake. Cake marshmallow pastry brownie caramels.
+                    Carrot cake dessert caramels macaroon jelly-o topping jelly-o dragée. Sugar plum liquorice sesame
+                    snaps muffin cotton candy sweet. Candy gummies donut.</p>
+                <a href="detail.html" class="btn btn-outline-success btn-sm">Read More</a>
+            </div>
+        </div>
+        <div class="row my-5 border  shadow">
+            <div class="col-md-4">
+                <img src="https://images.unsplash.com/photo-1491056792553-4704d261e3ef?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=667&q=80"
+                     class="img-fluid p-3">
+            </div>
+            <div class="col-md-8 col-sm-12 align-self-center p-4 ">
+                <h3 class="font-weight-light text-success">Yummy Donuts</h3>
+                <p>Pastry muffin fruitcake cake danish donut jelly beans jujubes. Ice cream oat cake candy canes
+                    lollipop. Bonbon candy canes caramels. Bonbon sweet macaroon dragée chupa chups liquorice brownie
+                    caramels donut. Croissant candy gummies gummi bears. Carrot cake chupa chups lollipop carrot cake
+                    pie.</p>
+                <a href="detail.html" class="btn btn-outline-success btn-sm">Read More</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
+</html>
